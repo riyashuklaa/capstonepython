@@ -14,9 +14,11 @@ LIGHTBLUE = (0,176,240)
 size = (600, 600)
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("Bouncing Ball")
+background=pygame.image.load("bg.jpg").convert()
 y1=25
 velocity=0.1
 y2=475
+
 
 
 while True:
@@ -39,7 +41,7 @@ while True:
         velocity=-velocity
     if y2<=30:
         velocity=+velocity
-    screen.fill(LIGHTBLUE)
+    screen.blit(background)
     pygame.draw.circle(screen,WHITE ,(150,y1),15)
     pygame.draw.circle(screen,WHITE ,(250,y2),15)
     pygame.display.update()
